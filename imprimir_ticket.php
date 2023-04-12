@@ -102,7 +102,7 @@ if ($row['ticket_number'] == null) {
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-ticket-alt"></i> Ticket de Examen</h4>
+                        <h4><i class="fas fa-ticket-alt"></i> Ticket de Examen <?php echo $ticket_number; ?></h4>
                     </div>
                     <div class="card-body">
                         <img class="logo" src="/zeusdev.png" alt="Logo de ZeusDev">

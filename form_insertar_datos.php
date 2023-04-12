@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (!isset($_SESSION["username"])) {
-  header("Location: index.php");
-  exit();
+    header("Location: index.php");
+    exit();
 }
 
 $show_modal = false;
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             height: 100%;
             padding-top: 0;
             width: 80%;
-    transform: scale(0.9);
+            transform: scale(0.9);
         }
 
         .sidebar {
@@ -118,39 +118,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .sidebar a.logo:hover {
             background-color: transparent !important;
         }
+
         .logout-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-}
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
 
-.logout-btn .btn {
-  background-color: #29ABE2;
-  color: #ffffff;
-  border: none;
-  border-radius: 3px;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: all 0.2s ease;
-}
+        .logout-btn .btn {
+            background-color: #29ABE2;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
 
-.logout-btn .dropdown-menu a {
-  text-decoration: none;
-  color: black;
-  margin-left: 10px;
-}
-.logout-btn .dropdown-menu a:hover {
-  text-decoration: none;
-  color: #1c8bb9;
-}
+        .logout-btn .dropdown-menu a {
+            text-decoration: none;
+            color: black;
+            margin-left: 10px;
+        }
 
-.logout-btn .btn:hover {
-  background-color: #1c8bb9;
-}
+        .logout-btn .dropdown-menu a:hover {
+            text-decoration: none;
+            color: #1c8bb9;
+        }
 
+        .logout-btn .btn:hover {
+            background-color: #1c8bb9;
+        }
     </style>
     <!-- Agregar los scripts de Bootstrap y el script para abrir el modal -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -165,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="/form_insertar_datos.php"><i class="fa fa-pencil"></i> Ingresar exámenes</a>
         <a href="/ver_datos2.php"><i class="fa fa-calendar"></i> Calendarios</a>
         <a href="/control_datos.php"><i class="fa fa-cog"></i> Gestión</a>
-        <a href="/gastos.php"><i class="fa fa-money"></i> Gastos</a>
+        <a href="/gastos.php"><i class="fa fa-money"></i> Gastos e ingresos</a>
     </div>
 
     <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="alert-modal-label">
@@ -190,43 +191,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-                <h2 class="mb-4">Formulario de Exámenes</h2>
+            <h2 class="mb-4">Formulario de Exámenes <i class="material-icons align-middle">description</i></h2>
             </div>
             <div class="card-body">
                 <form method="post" action="form_insertar_datos.php">
-                    <div class="form-group">
-                        <label for="client_name">Nombre del Cliente:</label>
-                        <input type="text" class="form-control" id="client_name" name="client_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Teléfono:</label>
-                        <input type="text" class="form-control" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount_to_charge">Monto a Cobrar:</label>
-                        <input type="number" step="0.01" class="form-control" id="amount_to_charge" name="amount_to_charge" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="payment_status">Estado del Pago:</label>
-                        <select class="form-control" id="payment_status" name="payment_status" required>
-                            <option value="pendiente">Pendiente</option>
-                            <option value="pagado">Pagado</option>
-                            <option value="anulado">Anulado</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exam_date">Fecha del Examen:</label>
-                        <input type="date" class="form-control" id="exam_date" name="exam_date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="start_time">Hora de Inicio:</label>
-                        <input type="time" class="form-control" id="start_time" name="start_time" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="end_time">Hora de Fin:</label>
-                        <input type="time" class="form-control" id="end_time" name="end_time" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="form-group">
+    <label for="client_name">
+        <i class="material-icons align-middle">person</i> Nombre del Cliente:
+    </label>
+    <input type="text" class="form-control" id="client_name" name="client_name" required>
+</div>
+<div class="form-group">
+    <label for="phone">
+        <i class="material-icons align-middle">phone</i> Teléfono:
+    </label>
+    <input type="text" class="form-control" id="phone" name="phone" required>
+</div>
+<div class="form-group">
+    <label for="amount_to_charge">
+        <i class="material-icons align-middle">attach_money</i> Monto a Cobrar:
+    </label>
+    <input type="number" step="0.01" class="form-control" id="amount_to_charge" name="amount_to_charge" required>
+</div>
+<div class="form-group">
+    <label for="payment_status">
+        <i class="material-icons align-middle">payment</i> Estado del Pago:
+    </label>
+    <select class="form-control" id="payment_status" name="payment_status" required>
+        <option value="pendiente">Pendiente</option>
+        <option value="pagado">Pagado</option>
+        <option value="anulado">Anulado</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="exam_date">
+        <i class="material-icons align-middle">today</i> Fecha del Examen:
+    </label>
+    <input type="date" class="form-control" id="exam_date" name="exam_date" required>
+</div>
+<div class="form-group">
+    <label for="start_time">
+        <i class="material-icons align-middle">access_time</i> Hora de Inicio:
+    </label>
+    <input type="time" class="form-control" id="start_time" name="start_time" required>
+</div>
+<div class="form-group">
+    <label for="end_time">
+        <i class="material-icons align-middle">access_time</i> Hora de Fin:
+    </label>
+    <input type="time" class="form-control" id="end_time" name="end_time" required>
+</div>
+
+                    <button type="submit" class="btn btn-primary">
+                    Enviar 
+                        <i class="material-icons align-middle mr-1">send</i>
+                    </button>
+
                 </form>
             </div>
         </div>

@@ -255,7 +255,7 @@ $result = pg_query($dbconn, $sql);
         <a href="/form_insertar_datos.php"><i class="fa fa-pencil"></i> Ingresar exámenes</a>
         <a href="/ver_datos2.php"><i class="fa fa-calendar"></i> Calendarios</a>
         <a href="/control_datos.php"><i class="fa fa-cog"></i> Gestión</a>
-        <a href="/gastos.php"><i class="fa fa-money"></i> Gastos</a>
+        <a href="/gastos.php"><i class="fa fa-money"></i> Gastos e ingresos</a>
     </div>
 
     <div class="container" style="overflow-x: hidden;">
